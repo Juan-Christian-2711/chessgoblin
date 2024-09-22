@@ -1,2 +1,2 @@
 # chessgoblin
-Chess game analysis tool
+Chess game analysis tool.
