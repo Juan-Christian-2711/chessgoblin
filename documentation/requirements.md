@@ -16,4 +16,3 @@ displaying the game on a chess board and showing the best moves and accuracy.
     - make it so you can go back and forth through moves
 - Include a "Play from here button" where you can play against the ai
     - should be able to set the difficulty of the AI
-
