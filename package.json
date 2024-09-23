@@ -1,0 +1,23 @@
+{
+  "name": "chessgoblin",
+  "version": "1.0.0",
+  "description": "Chess game analysis tool.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juan-Christian-2711/chessgoblin.git"
+  },
+  "author": "Juan Christian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Juan-Christian-2711/chessgoblin/issues"
+  },
+  "homepage": "https://github.com/Juan-Christian-2711/chessgoblin#readme",
+  "devDependencies": {
+    "electron": "^32.1.2"
+  }
+}
