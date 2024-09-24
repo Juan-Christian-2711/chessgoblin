@@ -5,6 +5,7 @@ It uses Svelte Kit for the frontend and Rust for the backend using tauri.
 
 ## Developing
 First change the directory to /src
+
 ```bash
 cd src
 ```
