@@ -3,12 +3,14 @@
 
 fn main() {
   tauri::Builder::default()
-    .invoke_handler(tauri::generate_handler![greet])
+    .invoke_handler(tauri::generate_handler![render])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
 
 #[tauri::command]
-fn greet(name: &str) -> String {
-   format!("Hello, {}!", name)
+fn render(fen: &str) -> String {
+  let mut board = String::new();
+  board.push_str("<table class=\"chess-board\">");
+  format!("{}", board)
 }
