@@ -1,6 +1,4 @@
 <script>
-  import Greet from '../lib/Greet.svelte'
+  import ChessBoard from '../lib/ChessBoard.svelte';
 </script>
-
-<h1>Welcome to SvelteKit</h1>
-<Greet />
+<ChessBoard />
