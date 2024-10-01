@@ -10,7 +10,30 @@ fn main() {
 
 #[tauri::command]
 fn render(fen: &str) -> String {
-  let mut board = String::new();
-  board.push_str("<table class=\"chess-board\">");
+  let board = board(fen);
   format!("{}", board)
+}
+
+fn board(fen: &str) -> String {
+  println!();
+
+  let mut positions: Vec<char> = Vec::new();
+  for i in fen.chars(){
+      if i == ' '{
+          break;
+      }
+      if i == '/'{
+          continue;
+      }
+      else if i.is_digit(10)  {
+          let numblank = i.to_digit(10).unwrap();
+          for _i in 0..numblank{
+              positions.push(' ');
+          }
+      }
+      else {
+          positions.push(i);
+      }
+  }
+  positions.into_iter().collect()
 }
