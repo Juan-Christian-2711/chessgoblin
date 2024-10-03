@@ -1,5 +1,5 @@
 # chessgoblin
-chessgoblin is a chess game analysis tool.S
+chessgoblin is a chess game analysis tool.
 
 It uses Svelte Kit for the frontend and Rust for the backend using tauri.
 
