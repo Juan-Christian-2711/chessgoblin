@@ -11,6 +11,23 @@
   async function render() {
     board = await invoke('render', { fen });
     boardArray = board.split('');
+    const pieceMap = {
+    r: '♜', // black rook
+    n: '♞', // black knight
+    b: '♝', // black bishop
+    q: '♛', // black queen
+    k: '♚', // black king
+    p: '♟', // black pawn
+    R: '♖', // white rook
+    N: '♘', // white knight
+    B: '♗', // white bishop
+    Q: '♕', // white queen
+    K: '♔', // white king
+    P: '♙', // white pawn
+    ' ': ' '  // empty square
+  };
+  const renderedBoard = boardArray.map(piece => pieceMap[piece] || piece).join('');
+  boardArray = renderedBoard.split('');
   }
 </script>
 
@@ -35,7 +52,6 @@
         </style>
           <input id="greet-input" placeholder="Enter a name..." bind:value="{fen}" />
           <button on:click="{render}">Enter FEN</button>
-          <p>{boardArray}</p>
         <table class="chess-board">
             <tbody>
                 <tr>
