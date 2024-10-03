@@ -1,15 +1,19 @@
 
 <script>
   import { invoke } from '@tauri-apps/api/tauri'
+	import { onMount } from 'svelte';
   let fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
   let board = '';
-  render();
+  let boardArray = board.split('');
+  onMount(() => {
+        render();
+  });
   async function render() {
     board = await invoke('render', { fen });
     boardArray = board.split('');
   }
-  let boardArray = board.split('');
 </script>
+
         <style>
             .chess-board { border-spacing: 0; border-collapse: collapse; }
             .chess-board th { padding: .5em; }
@@ -31,6 +35,7 @@
         </style>
           <input id="greet-input" placeholder="Enter a name..." bind:value="{fen}" />
           <button on:click="{render}">Enter FEN</button>
+          <p>{boardArray}</p>
         <table class="chess-board">
             <tbody>
                 <tr>
