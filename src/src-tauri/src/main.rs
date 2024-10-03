@@ -15,25 +15,29 @@ fn render(fen: &str) -> String {
 }
 
 fn board(fen: &str) -> String {
-  println!();
+    let fen = fen.split(' ').next().unwrap_or(fen);
+    let mut position_string = String::new();
+    for i in fen.chars() {
+        position_string = format!("{}{}", position_string, filter(i));
+    }
+    return position_string;
+}
 
-  let mut positions: Vec<char> = Vec::new();
-  for i in fen.chars(){
-      if i == ' '{
-          break;
-      }
-      if i == '/'{
-          continue;
-      }
-      else if i.is_digit(10)  {
-          let numblank = i.to_digit(10).unwrap();
-          for _i in 0..numblank{
-              positions.push(' ');
-          }
-      }
-      else {
-          positions.push(i);
-      }
-  }
-  positions.into_iter().collect()
+fn filter(i: char) -> String {
+    if i == '/' {
+        return "".to_string();
+    } 
+    else if i.is_digit(10) {
+        let numblank = i.to_digit(10).unwrap();
+        return space(numblank);
+    }
+    return i.to_string();
+}
+
+fn space(i: u32) -> String{
+    let mut spaces = String::new();
+    for _x in 0..i {
+        spaces.push(' ');
+    }
+    spaces
 }
