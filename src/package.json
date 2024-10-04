@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@tauri-apps/api": "^1.6.0"
+		"@tauri-apps/api": "^1.6.0",
+		"svelte-chessground-ui": "^1.0.1"
 	}
 }
